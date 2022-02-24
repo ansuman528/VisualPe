@@ -27,6 +27,8 @@ $( ()=> {
  getData('EPF',(data)=>{
      Pi("epf-pi",[data.summary.employeeBalance, data.summary.employerBalance],["employee","employer"])
      Bar("epf-bar",[data.summary.employeeBalance, data.summary.employerBalance],["employee","employer"])
+     insert("epf-cb",data.summary.currentBalance)
+     insert("epf-tb",data.summary.totalBalance)
     })
 
 
