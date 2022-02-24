@@ -15,6 +15,7 @@
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style-copy.css">
     <!-- End layout styles -->
   </head>
   <body>
@@ -84,7 +85,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="total.html">
+              <a class="nav-link" href="index.html">
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
@@ -169,79 +170,70 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title">
-                <span class="page-title-icon bg-gradient-primary text-white me-2">
-                  <i class="mdi mdi-home"></i>
-                </span> Employee Provident Fund (EPF)
-              </h3>
-              <nav aria-label="breadcrumb">
-                <ul class="breadcrumb">
-                  <li class="breadcrumb-item active" aria-current="page">
-                    <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <!--  -->
-            <div class="row">
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Pie chart</h4>
-                    <canvas id="epf-pi" style="height:250px"></canvas>
-                  </div>
+            <section class="ftco-section table-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-wrap">
+                                <table class="table">
+                                <thead class="thead-primary">
+                                  <tr>
+                                    <th>TLD</th>
+                                    <th>Duration</th>
+                                    <th>Registration</th>
+                                    <th>Renewal</th>
+                                    <th>Transfer</th>
+                                    <th>Register</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row" class="scope" >.com</th>
+                                    <td>1 Year</td>
+                                    <td>$70.00</td>
+                                    <td>$5.00</td>
+                                    <td>$5.00</td>
+                                    <td>$5.00</td>
+                                  </tr>
+                                  <tr>
+                                    <td scope="row" class="scope">1 Year</td>
+                                    <td>$70.00</td>
+                                    <td>$5.00</td>
+                                    <td>$5.00</td>
+                                    <td>$5.00</td>
+                                    <td>$5.00</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" class="scope" >.org</th>
+                                    <td>1 Year</td>
+                                    <td>$70.00</td>
+                                    <td>$5.00</td>
+                                    <td>$5.00</td>
+                                    <td>$5.00</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" class="scope" >.info</th>
+                                    <td>1 Year</td>
+                                    <td>$70.00</td>
+                                    <td>$5.00</td>
+                                    <td>$5.00</td>
+                                    <td>$5.00</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" class="scope border-bottom-0">.me</th>
+                                    <td class="border-bottom-0">1 Year</td>
+                                    <td class="border-bottom-0">$45.00</td>
+                                    <td class="border-bottom-0">$5.00</td>
+                                    <td class="border-bottom-0">$5.00</td>
+                                    <td class="border-bottom-0">$45.00</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Bar chart</h4>
-                    <canvas id="epf-bar" style="height:250px"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
-
-            <div id="sec1" class="page-header">
-              <h3 class="page-title">
-                <span class="page-title-icon bg-gradient-primary text-white me-2">
-                  <i class="mdi mdi-home"></i>
-                </span> Public Provident Fund (PPF)
-              </h3>
-              <nav aria-label="breadcrumb">
-                <ul class="breadcrumb">
-                  <li class="breadcrumb-item active" aria-current="page">
-                    <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div id="sec2" class="row">  
-              <div class="col-md-4 stretch-card grid-margin">
-                <div class="card bg-gradient-danger card-img-holder text-white">
-                  <div class="card-body">
-                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3">Current Ammount <i class="mdi mdi-chart-line mdi-24px float-right"></i>
-                    </h4>
-                    <h3 class="mb-5" id="ppf-cb">$ 15,0000</h3>
-                    <h6 class="card-text">Increased by 60%</h6>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 stretch-card grid-margin">
-                <div class="card bg-gradient-info card-img-holder text-white">
-                  <div class="card-body">
-                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3">Maturity Date <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
-                    </h4>
-                    <h3 class="mb-5" id="ppf-md">$ 15,0000</h3>
-                    <h6 class="card-text">Decreased by 10%</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </section>
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
