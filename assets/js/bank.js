@@ -24,18 +24,21 @@ const insert=(id,data)=>{
     }
   }
 $( ()=> {
- getData('ULIP',(data)=>{
-    insert("ulip-sd",data)
-    insert("ulip-ed",data)
-    insert("ulip-ty",data)
-    insert("ulip-pa",data)
+
+
+    getData('TERM_DEPOSIT',(data)=>{
+        Bar("fd-bar",[data.summary.principalAmount,data.summary.currentValue],["invested Value","Current Value"])
     })
-
-
-getData('MUTUAL_FUNDS',(data)=>{
-    insert("mf-sd",data)
-    insert("mf-ed",data)
-    insert("mf-ty",data)
-    insert("mf-pa",data)
+    getData('RECCURING_DEPOSIT',(data)=>{
+        Bar("rec-bar",[data.summary.principalAmount,data.summary.currentValue],["invested Value","Current Value"])
+    })
+    getData('CREDIT_CARD',(data)=>{
+        Bar("cc-bar",[data.summary.creditLimit,data.summary.totalDueAmount],["Credit Limit","used credit"])
+    })
+    getData('CD',(data)=>{
+        Bar("cd-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])
+    })
+    getData('IDR',(data)=>{
+        Bar("idr-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])
     })
 })
