@@ -46,7 +46,7 @@ $( ()=> {
     getData('DEBENTURES',(data)=>{
         Bar("db-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])
         insert("db-y",data.summary.holdings.holding.yield)
-        insert("db-md",summary.holdings.holding.maturityDate)
+        insert("db-md",data.summary.holdings.holding.maturityDate)
     })
     getData('ETF',(data)=>{
         Bar("etf-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])
