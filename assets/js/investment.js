@@ -40,18 +40,31 @@ $( ()=> {
     })
     getData('BONDS',(data)=>{
         Bar("bond-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])
+        insert("bond-cr",data.summary.holdings.holding.couponRate)
+        insert("bond-md",data.summary.holdings.holding.maturityDate)
     })
     getData('DEBENTURES',(data)=>{
         Bar("db-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])
+        insert("db-y",data.summary.holdings.holding.yield)
+        insert("db-md",summary.holdings.holding.maturityDate)
     })
     getData('ETF',(data)=>{
         Bar("etf-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])
+        
+    })
+    getData('NPS',(data)=>{
+        Pi("nps-pi",[data.summary.debtAssetValue,data.summary.equityAssetValue,data.summary.otherAssetValue],["Debt Asset","Equity Asset","Other Asset"])
+        insert("nps-t1",data.summary.tier1Status)
+        insert("nps-t2",data.summary.tier2Status)
+        insert("nps-cv",data.summary.currentValue)
     })
     getData('GOVT_SECURITIES',(data)=>{
         Bar("gs-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])
+        insert("gs-md",data.summary.holdings.holding.maturityDate)
     })
     getData('CP',(data)=>{
         Bar("cp-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])
+        insert("cp-t",data.summary.investment.holdings.holding.tenureMoths)
     })
     getData('REIT',(data)=>{
         Bar("reit-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])
@@ -67,6 +80,7 @@ $( ()=> {
     })
     getData('SIP',(data)=>{
         Bar("sip-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])
+        insert("sip-md",data.summary.investments.maturityDate)
     })
     getData('EQUITIES',(data)=>{
         Bar("eq-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])
