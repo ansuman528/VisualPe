@@ -8,7 +8,11 @@
   touch-action: auto;
   -ms-touch-action: auto;
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 /*
  * Scrollbar rail styles
  */
