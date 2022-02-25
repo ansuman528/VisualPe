@@ -50,11 +50,12 @@
                   <p class="mb-1 text-black">User</p>
                 </div>
               </a>
-              <div class="dropdown-menu navbar-dropdown" style="padding: 1rem;" aria-labelledby="profileDropdown">
+              <div class="dropdown-menu navbar-dropdown" style="padding: 1rem;width:200px" aria-labelledby="profileDropdown" id="bank-list">
                 <input type="checkbox"> Demo Bank 1</input><br>
                 <input type="checkbox"> Demo Bank 2 </input><br>
                 <input type="checkbox"> Demo Bank 3</input><br>
-                <input type="checkbox"> Demo Bank 4 </input>
+                <input type="checkbox"> Demo Bank 4 </input><br>
+                <span type="button"> Sign out    </span>
               </div>
             </li>
             <li class="nav-item nav-logout d-none d-lg-block">
@@ -165,6 +166,27 @@
               <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white me-2">
                   <i class="mdi mdi-home"></i>
+                </span>Bank Accounts Overview
+              </h3>
+              <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item active" aria-current="page">
+                    <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="row" id="bank-tile">
+              <div class="col-md-4 ">
+              <img  src="assets/images/Pendulum.gif"><h3>loading ...</h3>
+            </div>
+            </div>
+
+
+            <div class="page-header">
+              <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white me-2">
+                  <i class="mdi mdi-home"></i>
                 </span> Deposit
               </h3>
               <nav aria-label="breadcrumb">
@@ -211,23 +233,27 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-7 grid-margin stretch-card">
+              <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <div class="clearfix">
-                      <h4 class="card-title float-left">Visit And Sales Statistics</h4>
-                      <div id="visit-sale-chart-legend" class="rounded-legend legend-horizontal legend-top-right float-right"></div>
-                    </div>
-                    <canvas id="visit-sale-chart" class="mt-4"></canvas>
+                    <h4 class="card-title">Bar chart</h4>
+                    <canvas id="dep-pi" style="height:250px"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="col-md-5 grid-margin stretch-card">
-                <div class="card">
+              <div class="col-md-6 stretch-card grid-margin">
+                <div class="card bg-gradient-danger card-img-holder text-white">
                   <div class="card-body">
-                    <h4 class="card-title">Traffic Sources</h4>
-                    <canvas id="traffic-chart"></canvas>
-                    <div id="traffic-chart-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4"></div>
+                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Banks <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                    </h4>
+                    <h3 class="fd-5" id="">Loading ...</h3>
+                    <h4 class="font-weight-normal mb-3">Maturity Date <i class="mdi mdi-clock mdi-24px float-right"></i>
+                    </h4>
+                    <h3 class="fd-5" id="">Loading ...</h3>
+                    <h4 class="font-weight-normal mb-3">Reccuring Amount <i class="mdi mdi-cash mdi-24px float-right"></i>
+                    </h4>
+                    <h3 class="fd-5" id="">Loading ...</h3>
                   </div>
                 </div>
               </div>

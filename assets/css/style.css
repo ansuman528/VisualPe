@@ -4755,9 +4755,10 @@ textarea.form-control-lg {
   border: 1px solid #ebedf2;
   border-radius: 0.25rem; }
   .dropdown-menu[data-bs-popper] {
-    top: 100%;
+    top: 110%;
     left: 0;
-    margin-top: 0.125rem; }
+    margin-top: 0.125rem;
+    }
 
 .dropdown-menu-start {
   --bs-position: start; }
@@ -13887,7 +13888,8 @@ dl {
           position: absolute;
           font-size: 0.9rem;
           margin-top: 0;
-          padding: 0; }
+          padding: 0;
+          }
           .rtl .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-menu.navbar-dropdown {
             right: auto;
             left: 0; }
