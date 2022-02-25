@@ -32,7 +32,7 @@ $( ()=> {
 //     })
 
  const cal = (cur_val,invest_val) =>{
-    return (((cur_val-invest_val)/invest_val)*100)+"%";
+    return (((cur_val-invest_val)/invest_val)*100).toFixed(3)+"%";
  }
     getData('MUTUAL_FUNDS',(data)=>{
         Bar("mf-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])

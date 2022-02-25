@@ -90,8 +90,9 @@ $( ()=> {
         }
         Pi("user-pi",val,lab)
     })
-
-   
+    const cal = (cur_val,invest_val) =>{
+        return (((cur_val-invest_val)/invest_val)*100).toFixed(3)+"%";
+     }
     getData('DEPOSIT',(data)=>{
         deposit=data;
         var bankList=$("#bank-list").get(0)
@@ -126,12 +127,14 @@ $( ()=> {
         Bar("fd-bar",[data.summary.principalAmount,data.summary.currentValue],["invested Value","Current Value"])
         insert("fd-i",data.summary.interestRate+"%")
         insert("fd-md",data.summary.maturityDate)
+        insert("td-pro-mar",cal(data.summary.currentValue,data.summary.principalAmount))
     })
     getData('RECCURING_DEPOSIT',(data)=>{
         Bar("rec-bar",[data.summary.principalAmount,data.summary.currentValue],["invested Value","Current Value"])
         insert("rec-i",data.summary.interestRate+"%")
         insert("rec-md",data.summary.maturityDate)
         insert("rec-ra",data.summary.recurringAmount)
+        insert("rd-pro-mar",cal(data.summary.currentValue,data.summary.principalAmount))
     })
     getData('CREDIT_CARD',(data)=>{
         Bar("cc-bar",[data.summary.creditLimit,data.summary.totalDueAmount],["Credit Limit","used credit"])
@@ -141,6 +144,7 @@ $( ()=> {
         Bar("cd-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])
         insert("cd-i",data.summary.holdings.holding.yield+"%")
         insert("cd-md",data.summary.holdings.holding.maturityDate)
+        insert("cd-pro-mar",cal(data.summary.currentValue,data.summary.investmentValue))
     })
     getData('IDR',(data)=>{
         Bar("idr-bar",[data.summary.investmentValue,data.summary.currentValue],["invested Value","Current Value"])
