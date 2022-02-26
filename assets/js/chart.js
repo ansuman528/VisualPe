@@ -150,7 +150,7 @@ const logout=()=>{
   localStorage.setItem("jwt",null)
   window.location.href="https://ansuman528.github.io/VisualPe/login.html"
 }
-// if(window.location.href.substring(0,37) == "https://ansuman528.github.io/VisualPe"){
+if(window.location.href.substring(0,37) == "https://ansuman528.github.io/VisualPe"){
 var jwt=localStorage.getItem("jwt")
 if(jwt==null)window.location.href="https://ansuman528.github.io/VisualPe/login.html"
 insert("phn-no",JSON.parse(window.atob(jwt.split('.')[1])).phone)
@@ -166,8 +166,8 @@ fetch(`https://bridge-test-api.herokuapp.com/checklogin`,
   .then((resp)=>{
           {
              console.log(resp)
-             if(resp.wait==true)
-             window.location.href="https://ansuman528.github.io/VisualPe/wait.html"
+             if(resp.wait==true);
+            //  window.location.href="https://ansuman528.github.io/VisualPe/wait.html"
              if(resp.auth==false)
              window.location.href="https://ansuman528.github.io/VisualPe/login.html"
           }
@@ -176,4 +176,4 @@ fetch(`https://bridge-test-api.herokuapp.com/checklogin`,
       // $(sub).get(0).innerHTML=`<h3>Oops something went wrong ...</h3><h4>Try again </h4><h5>Reloading page ...</h5>`
       // setTimeout(()=>window.location.reload(),5000)
   })
-// }
+}

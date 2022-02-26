@@ -13,6 +13,16 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.hi{
+  /* background: chartreuse; */
+}
+tr.mi{
+  background: chocolate;
+}
+.lo{
+  background: crimson;
+}
+
 /*
  * Scrollbar rail styles
  */
