@@ -145,11 +145,12 @@ const Bar=(id,data,labels)=>{
     }
 }
 
-if(window.location.href.substring(0,37) == "https://ansuman528.github.io/VisualPe"){
+
 const logout=()=>{
   localStorage.setItem("jwt",null)
   window.location.href="https://ansuman528.github.io/VisualPe/login.html"
 }
+if(window.location.href.substring(0,37) == "https://ansuman528.github.io/VisualPe"){
 var jwt=localStorage.getItem("jwt")
 if(jwt==null)window.location.href="https://ansuman528.github.io/VisualPe/login.html"
 insert("phn-no",JSON.parse(window.atob(jwt.split('.')[1])).phone)
