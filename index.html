@@ -15,8 +15,9 @@
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dropdown.css">
     <script src="js/jwt-decode.min.js"></script>
-
+    <script src="assets/js/dropdown.js"></script>
     <!-- End layout styles -->
   </head>
   <body>
@@ -37,7 +38,15 @@
                 <div class="input-group-prepend bg-transparent">
                   <i class="input-group-text border-0 mdi mdi-magnify"></i>
                 </div>
-                <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
+                <input onclick="myFunction()" type="text" id="myInput" class="form-control bg-transparent border-0 dropbtn" placeholder="Search deposit.." onkeyup="filterFunction()">
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#sec1">Deposit</a>
+                  <a href="#sec2">Recurring deposit</a>
+                  <a href="#sec3">Term Deposit</a>
+                  <a href="#sec4">Certificate of deposit</a>
+                  <a href="#sec5">Indian deposit recipt</a>
+                  <a href="#sec6">Credit Card</a>
+                </div>
               </div>
             </form>
           </div>
