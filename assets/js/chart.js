@@ -147,9 +147,10 @@ const Bar=(id,data,labels)=>{
 
 const logout=()=>{
   localStorage.setItem("jwt",null)
-  window.location.href="/login.html"
+  window.location.href="https://ansuman528.github.io/VisualPe/login.html"
 }
 var jwt=localStorage.getItem("jwt")
+if(jwt==null)window.location.href="https://ansuman528.github.io/VisualPe/login.html"
 insert("phn-no",JSON.parse(window.atob(jwt.split('.')[1])).phone)
 insert("phn-noa",JSON.parse(window.atob(jwt.split('.')[1])).phone)
 fetch(`https://bridge-test-api.herokuapp.com/checklogin`,
