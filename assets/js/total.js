@@ -1,21 +1,4 @@
-const getData =(type,callback)=>{
-    fetch(`https://bridge-test-api.herokuapp.com/get-data/${type}`,
-    {
-        method:'get',
-        mode:'cors',
-        credentials: 'same-origin',
-        headers: {"Content-type": "application/json; charset=UTF-8"},
-    }
-    ).then((resp)=>resp.json())
-    .then((resp)=>{
-            {
-               callback(resp)
-            }
-        })
-    .catch(()=>{ 
-        console.log("connection error")
-    })
-}
+
 const getDataInsurance =(type,callback)=>{
     fetch(`https://bridge-test-api.herokuapp.com/get-data/${type}`,
     {
@@ -71,11 +54,7 @@ const getDataInvestment =(type,callback)=>{
     })
 }
 
-const insert=(id,data)=>{
-    if ($(`#${id}`).length) {
-      $(`#${id}`).get(0).innerHTML=data
-    }
-  }
+
 
 
 

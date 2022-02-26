@@ -1,51 +1,12 @@
 var deposit =""
-const getPulseData=(type,callback)=>{
-    fetch(`https://raw.githubusercontent.com/PhonePe/pulse/master/data/aggregated/transaction/country/india/${type}`,
-     {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-        "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Authorization"
-     }
-        
-        ).then((resp)=>resp.json())
-        .then((resp)=>{
-                {
-                   callback(resp)
-                }
-            })
-        .catch(()=>{ 
-            console.log("connection error")
-        })
-}
-const getData =(type,callback)=>{
-    fetch(`https://bridge-test-api.herokuapp.com/get-data/${type}`,
-    {
-        method:'get',
-        mode:'cors',
-        credentials: 'same-origin',
-        headers: {"Content-type": "application/json; charset=UTF-8"},
-    }
-    ).then((resp)=>resp.json())
-    .then((resp)=>{
-            {
-               callback(resp)
-            }
-        })
-    .catch(()=>{ 
-        console.log("connection error")
-    })
-}
+
 const Commas=(x)=> {
     return x.toString().replace("-", "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 const num=(x)=>{
     return parseFloat(x)
 }
-const insert=(id,data)=>{
-    if ($(`#${id}`).length) {
-      $(`#${id}`).get(0).innerHTML=data
-    }
-  }
+
   const updateDeposit=()=>{
     cnt=0
     debit=0
@@ -119,7 +80,7 @@ $( ()=> {
             </div>`
             cnt=(cnt+1)%3
         }
-        bankList.innerHTML+=`<span type="button" onclick="signout()">Sign Out</span>`
+        bankList.innerHTML+=`<span type="button" onclick="logout()">Sign Out</span>`
         updateDeposit()
       
     })

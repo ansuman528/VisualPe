@@ -1,3 +1,44 @@
+const getPulseData=(type,callback)=>{
+  fetch(`https://raw.githubusercontent.com/PhonePe/pulse/master/data/aggregated/transaction/country/india/${type}`,
+   {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Authorization"
+   }
+      
+      ).then((resp)=>resp.json())
+      .then((resp)=>{
+              {
+                 callback(resp)
+              }
+          })
+      .catch(()=>{ 
+          console.log("connection error")
+      })
+}
+const getData =(type,callback)=>{
+  fetch(`https://bridge-test-api.herokuapp.com/get-data/${type}`,
+  {
+      method:'get',
+      mode:'cors',
+      credentials: 'same-origin',
+      headers: {"Content-type": "application/json; charset=UTF-8"},
+  }
+  ).then((resp)=>resp.json())
+  .then((resp)=>{
+          {
+             callback(resp)
+          }
+      })
+  .catch(()=>{ 
+      console.log("connection error")
+  })
+}
+const insert=(id,data)=>{
+  if ($(`#${id}`).length) {
+    $(`#${id}`).get(0).innerHTML=data
+  }
+}
 var doughnutPieData = {
   datasets: [{
     data: [],
@@ -103,3 +144,32 @@ const Bar=(id,data,labels)=>{
       });
     }
 }
+
+const logout=()=>{
+  localStorage.setItem("jwt",null)
+  window.location.href="/login.html"
+}
+var jwt=localStorage.getItem("jwt")
+insert("phn-no",JSON.parse(window.atob(jwt.split('.')[1])).phone)
+insert("phn-noa",JSON.parse(window.atob(jwt.split('.')[1])).phone)
+fetch(`https://bridge-test-api.herokuapp.com/checklogin`,
+  {
+      method:'get',
+      mode:'cors',
+      credentials: 'same-origin',
+      headers: {"Content-type": "application/json; charset=UTF-8","x-access-token":jwt},
+  }
+  ).then((resp)=>resp.json())
+  .then((resp)=>{
+          {
+             console.log(resp)
+             if(resp.wait==true)
+             window.location.href="/wait.html"
+             if(resp.auth==false)
+             window.location.href="/login.html"
+          }
+      })
+  .catch(()=>{ 
+      $(sub).get(0).innerHTML=`<h3>Oops something went wrong ...</h3><h4>Try again </h4><h5>Reloading page ...</h5>`
+      setTimeout(()=>window.location.reload(),5000)
+  })
