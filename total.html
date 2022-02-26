@@ -190,9 +190,20 @@
           <div class="content-wrapper">
             <section class="ftco-section table-area">
                 <div class="container">
+                  <div class="row">
+                    <div class="col-lg-12 grid-margin stretch-card">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title">Investment Portfolio</h4>
+                          <canvas id="port-pie" style="height:250px"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="table-wrap">
+                              <h4 class="card-title">Investment Details</h4>
                                 <table class="table">
                                 <thead class="thead-primary">
                                   <tr>
@@ -222,7 +233,7 @@
                                     <td scope="row" class="scope">Term deposit</td>
                                     <td id="fd-md">Loading..</td>
                                     <td id="tm-pr">Loading..</td>
-                                    <td>Not available</td>
+                                    <td id="tm-cur">Not available</td>
                                     <td ><div style="background:orange">LOW</div></td>
                                   </tr>
                                   <tr>
@@ -363,6 +374,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </section>
           </div>

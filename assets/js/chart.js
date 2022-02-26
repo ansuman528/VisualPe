@@ -1,3 +1,73 @@
+
+const pl1=[
+  'rgba(255, 99, 132, 0.5)',
+  'rgba(54, 162, 235, 0.5)',
+  'rgba(255, 206, 86, 0.5)',
+  'rgba(75, 192, 192, 0.5)',
+  'rgba(153, 102, 255, 0.5)',
+  'rgba(255, 159, 64, 0.5)',
+  'rgba(240,163,255,0.5)',
+  'rgba(0,117,220,0.5)',
+  'rgba(153,63,0,0.5)',
+  'rgba(76,0,92,0.5)',
+  'rgba(25,25,25,0.5)',
+  'rgba(0,92,49,0.5)',
+  'rgba(43,206,72,0.5)',
+  'rgba(255,204,153,0.5)',
+  'rgba(128,128,128,0.5)',
+  'rgba(148,255,181,0.5)',
+  'rgba(143,124,0,0.5)',
+  'rgba(157,204,0,0.5)',
+  'rgba(194,0,136,0.5)',
+  'rgba(0,51,128,0.5)',
+  'rgba(255,164,5,0.5)',
+  'rgba(255,168,187,0.5)',
+  'rgba(66,102,0,0.5)',
+  'rgba(255,0,16,0.5)',
+  'rgba(94,241,242,0.5)',
+  'rgba(0,153,143,0.5)',
+  'rgba(224,255,102,0.5)',
+  'rgba(116,10,255,0.5)',
+  'rgba(153,0,0,0.5)',
+  'rgba(255,255,128,0.5)',
+  'rgba(255,255,0,0.5)',
+  'rgba(255,80,5,0.5)']
+  
+  const pl2=[
+    'rgba(255,99,132,1)',
+    'rgba(54, 162, 235, 1)',
+    'rgba(255, 206, 86, 1)',
+    'rgba(75, 192, 192, 1)',
+    'rgba(153, 102, 255, 1)',
+    'rgba(255, 159, 64, 1)',
+    'rgba(240,163,255,1)',
+      'rgba(0,117,220,1)',
+      'rgba(153,63,0,1)',
+      'rgba(76,0,92,1)',
+      'rgba(25,25,25,1)',
+      'rgba(0,92,49,1)',
+      'rgba(43,206,72,1)',
+      'rgba(255,204,153,1)',
+      'rgba(128,128,128,1)',
+      'rgba(148,255,181,1)',
+      'rgba(143,124,0,1)',
+      'rgba(157,204,0,1)',
+      'rgba(194,0,136,1)',
+      'rgba(0,51,128,1)',
+      'rgba(255,164,5,1)',
+      'rgba(255,168,187,1)',
+      'rgba(66,102,0,1)',
+      'rgba(255,0,16,1)',
+      'rgba(94,241,242,1)',
+      'rgba(0,153,143,1)',
+      'rgba(224,255,102,1)',
+      'rgba(116,10,255,1)',
+      'rgba(153,0,0,1)',
+      'rgba(255,255,128,1)',
+      'rgba(255,255,0,1)',
+      'rgba(255,80,5,1)']
+
+
 const getPulseData=(type,callback)=>{
   fetch(`https://raw.githubusercontent.com/PhonePe/pulse/master/data/aggregated/transaction/country/india/${type}`,
    {
@@ -42,22 +112,9 @@ const insert=(id,data)=>{
 var doughnutPieData = {
   datasets: [{
     data: [],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.5)',
-      'rgba(54, 162, 235, 0.5)',
-      'rgba(255, 206, 86, 0.5)',
-      'rgba(75, 192, 192, 0.5)',
-      'rgba(153, 102, 255, 0.5)',
-      'rgba(255, 159, 64, 0.5)'
-    ],
-    borderColor: [
-      'rgba(255,99,132,1)',
-      'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)',
-      'rgba(255, 159, 64, 1)'
-    ],
+    backgroundColor: pl1,
+    borderColor: pl2
+     
   }],
 
   // These labels appear in the legend and in the tooltips when hovering different arcs
@@ -177,3 +234,4 @@ fetch(`https://bridge-test-api.herokuapp.com/checklogin`,
       // setTimeout(()=>window.location.reload(),5000)
   })
 }
+
