@@ -204,7 +204,7 @@ const Bar=(id,data,labels)=>{
 
 
 const logout=()=>{
-  localStorage.setItem("jwt",null)
+  localStorage.removeItem("jwt");
   window.location.href="https://ansuman528.github.io/VisualPe/login.html"
 }
 // if(window.location.href.substring(0,37) == "https://ansuman528.github.io/VisualPe"){
