@@ -92,7 +92,7 @@ const getData =(type,callback)=>{
       method:'get',
       mode:'cors',
       credentials: 'same-origin',
-      headers: {"Content-type": "application/json; charset=UTF-8"},
+      headers: {"Content-type": "application/json; charset=UTF-8","x-access-token":jwt},
   }
   ).then((resp)=>resp.json())
   .then((resp)=>{
