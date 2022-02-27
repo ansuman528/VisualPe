@@ -14,7 +14,7 @@ fetch(`https://bridge-test-api.herokuapp.com/checklogin`,
                console.log(resp)
                if(resp.wait!=true)
                window.location.href="https://ansuman528.github.io/VisualPe/index.html"
-            window.setTimeout(check,3000)
+                window.setTimeout(check,3000)
             }
         })
     .catch(()=>{ 
