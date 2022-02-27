@@ -224,7 +224,7 @@ fetch(`https://bridge-test-api.herokuapp.com/checklogin`,
           {
              console.log(resp)
              if(resp.wait==true);
-            //  window.location.href="https://ansuman528.github.io/VisualPe/wait.html"
+             window.location.href="https://ansuman528.github.io/VisualPe/wait.html"
              if(resp.auth==false)
              window.location.href="https://ansuman528.github.io/VisualPe/login.html"
           }
