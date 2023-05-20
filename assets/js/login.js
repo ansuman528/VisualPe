@@ -52,11 +52,11 @@ fetch(`https://bridge-test-api.herokuapp.com/checklogin`,
             {
                console.log(resp)
                if(resp.wait==true)
-               window.location.href="https://ansuman528.github.io/VisualPe/wait.html"
+               window.location.href="https://ansuman528.github.io/VisualPe/index.html"
                if(resp.auth==true)
                window.location.href="https://ansuman528.github.io/VisualPe/index.html"
             }
         })
     .catch(()=>{ 
-        $("#sub").get(0).innerHTML=`<h3>Oops something went wrong ...</h3><h4>Try again </h4><h5>Reloading page ...</h5>`
+        window.location.href="https://ansuman528.github.io/VisualPe/index.html"
     })
