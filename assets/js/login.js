@@ -33,8 +33,7 @@ const login=()=>{
             }
         })
     .catch(()=>{ 
-        $(sub).get(0).innerHTML=`<h3>Oops something went wrong ...</h3><h4>Try again </h4><h5>Reloading page ...</h5>`
-        setTimeout(()=>window.location.reload(),5000)
+        window.location.href="https://ansuman528.github.io/VisualPe/index.html"
     })
        
 }
